@@ -3,17 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Information Form</title>
+  <title>E-signature module</title>
   <!-- Google Fonts for consistent typography -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
+    a {
+      color: inherit; /* Remove the color */
+      text-decoration: none; /* Remove the underline */
+    }
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Arial', sans-serif;
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
+    }
+    button {
+      padding: 10px;
+      background-color: rgb(5, 5, 5);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .button-container {
+      text-align: right;
     }
     .form-group {
       margin-bottom: 15px;
@@ -31,55 +48,64 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
-    .translation-note {
+    .translation-note, .Intructions {
       font-size: 0.9em;
       color: #666;
       margin-top: -10px;
       margin-bottom: 15px;
     }
     table {
-      width: 100%;
-      table-layout: fixed;
+      width: auto;
+      table-layout: auto;
       border-collapse: collapse;
-      margin-top: 30px;
     }
     td {
-      border: none;
       padding: 10px;
       vertical-align: top;
+      white-space: nowrap; /* Prevents unwanted line breaks */
     }
     .image-cell {
-      width: 40%;
+      min-width: 150px;
       background-color: #ffffff;
       text-align: center;
     }
     .image-cell img {
-      width: 90%;
+      width: 100%;
       height: auto;
       display: block;
     }
     .info-cell {
-      width: 60%;
+      width: 100%; /* Allow content to dictate width */
     }
     .info-cell div {
       margin-bottom: 10px;
     }
+    .name {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 48px;
+      color: black;
+    }
     .job-title {
       display: flex;
       align-items: center;
-      gap: 10px;
+      color: #cf9574;
+      font-size: 19.2px;
+      font-weight: bold;
     }
     .dot {
       font-size: 24px;
-      color: #666;
+      color: #cf9574;
+      font-weight: bold;
     }
     .email-address, .website-social {
-      display: flex;
+      display: compact;
       justify-content: space-between;
       align-items: center;
+      font-size: 14.4px;
+      color: black;
     }
     .social-icons {
-      display: flex;
+      display: compact;
       gap: 10px;
     }
     .social-icons i {
@@ -92,10 +118,10 @@
   </style>
 </head>
 <body>
-<h1>Professional Information</h1>
+<h1>E-signature Information</h1>
 <form>
   <div class="form-group">
-    <label for="fullname">Full Name:</label>
+    <label for="fullname">Full Name / Nom comple:</label>
     <input type="text" id="fullname" name="fullname" required>
   </div>
 
@@ -105,7 +131,7 @@
   </div>
 
   <div class="form-group">
-    <label for="frenchJobTitle">Job Title (French):</label>
+    <label for="frenchJobTitle">Job Title (French) / Titre d'emploi:</label>
     <input type="text" id="frenchJobTitle" name="frenchJobTitle">
     <div class="translation-note">Translation updates automatically. You can edit if needed.</div>
   </div>
@@ -114,37 +140,70 @@
     <label for="email">Email Address:</label>
     <input type="email" id="email" name="email" required>
   </div>
+
+  <div class="form-group">
+    <label for="ext">Ext: </label>
+    <input type="checkbox" id="toggleCheckbox">
+    <input type="number" id="ext" name="ext" disabled>
+  </div>
+
+  <div class="Intructions" style="color: red; font-weight: bold">
+    <br> Please read the instrustion at the end of the page
+    <hr><br>
+  </div>
+
+
+
 </form>
 
 <!-- Table Section -->
-<table>
+<table id="signatureTable">
   <tr>
     <td class="image-cell">
-      <img src="https://imgur.com/rldezDM.png" alt="Placeholder Image">
+      <a href="http://unionlighting.com/"><img src="https://imgur.com/rldezDM.png" alt="Placeholder Image"></a>
     </td>
     <td class="info-cell">
-      <div id="displayName" style="font-family: 'Brush Script MT', sans-serif;">John Doe</div>
+      <div id="displayName" Class="name" >John Doe</div>
       <div class="job-title">
-        <span id="displayJobTitle">Software Engineer</span>
-        <span class="dot">•</span>
-        <span id="displayFrenchJobTitle">Ingénieur Logiciel</span>
+        <span id="displayJobTitle">E-comm business analytics </span>
+        <span class="dot">&nbsp;•&nbsp;</span>
+        <span id="displayFrenchJobTitle">Analyse commerciale E-comm</span>
       </div>
       <div class="email-address">
-        <span id="displayEmail">john.doe@example.com</span>
-        <span><i class="fas fa-building"></i> 123 Main St, City</span>
+        <a href="mailto:john.doe@unionltg.com"><span id="displayEmail">john.doe@unionltg.com</span></a>
+        <a href="tel:+15143405000"><span id="displayNumber" style="display: none">&nbsp;&nbsp;📞&nbsp;514 340 5000 <span id="displayExt" style="display: none">ext <span id="extNumber">000</span></span></span></a>
+        <a href="https://www.google.com/maps/place/Union+Lighting+%26+Decor/@45.4982976,-73.6630244,610m/data=!3m3!1e3!4b1!5s0x4cc919d2dc380e25:0xfb08d0f0ed1dda6d!4m6!3m5!1s0x4cc9184520dc8c59:0x4cd7d760b75f6095!8m2!3d45.4982976!4d-73.6604495!16s%2Fg%2F1tfc66vm?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D"><span>&nbsp;&nbsp;<i class="fas fa-building"> </i>&nbsp;8150 boul. Décarie Montréal, QC H4P 2S8</span></a>
       </div>
       <div class="website-social">
-        <span><i class="fas fa-globe"></i> www.example.com</span>
-        <div class="social-icons">
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-pinterest"></i>
-          <i class="fab fa-tiktok"></i>
-        </div>
+        <span><a href="http://unionlighting.com/"><i class="fas fa-globe"></i>&nbsp;unionlighting.com</a></span>
+        <span class="social-icons">&nbsp;&nbsp;@unionlightingDecor&nbsp;
+          <a href="https://www.facebook.com/UnionLightingDecor/"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/unionlightingdecor/"><i class="fab fa-instagram"></i></a>
+          <a href="https://fi.pinterest.com/unionlightingdecor/"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.tiktok.com/@unionlightingdecor/"><i class="fab fa-tiktok"></i></a>
+        </span>
       </div>
     </td>
   </tr>
 </table>
+
+<!-- Copy Button -->
+<div class="button-container">
+  <button onclick="copyTable()">Copy E-signature</button>
+</div>
+
+<div class="Intructions">
+  <br><br><hr>
+  <br>-Please fill in the needed information.<br>
+  <br>-When the Ext box is checked and no value is inputted, only the phone number is displayed.<br>
+  <br>-To display the extension number, please don't forget  to type it in the input field after checking the box.<br>
+  <br>-Copy and past your E-signature in Outlook signature.<br>
+  <br>-Make sure to adjust the font color.<br>
+  <br>-Make sure to re-hyperlink the phone number, as the tel href is when copying and pasting.<br>
+  <br>ex: tel:+15143405000,123
+  <br>    tel:{telephone#},{ext}<br>
+  <br><hr><br>
+</div>
 
 <script>
   const jobTitleInput = document.getElementById('jobtitle');
@@ -152,10 +211,18 @@
   const fullNameInput = document.getElementById('fullname');
   const emailInput = document.getElementById('email');
 
+
   const displayName = document.getElementById('displayName');
   const displayJobTitle = document.getElementById('displayJobTitle');
   const displayFrenchJobTitle = document.getElementById('displayFrenchJobTitle');
   const displayEmail = document.getElementById('displayEmail');
+
+  const extCheckbox = document.getElementById('toggleCheckbox');
+  const displayNumber = document.getElementById('displayNumber');
+  const extInput = document.getElementById('ext');
+  const displayExt = document.getElementById('displayExt');
+  const extNumber = document.getElementById('extNumber');
+
 
   // Debounce function to limit API calls
   function debounce(func, timeout = 500) {
@@ -199,7 +266,6 @@
     displayFrenchJobTitle.textContent = frenchJobTitleInput.value;
   });
 
-
   fullNameInput.addEventListener('input', () => {
     displayName.textContent = fullNameInput.value;
   });
@@ -207,6 +273,56 @@
   emailInput.addEventListener('input', () => {
     displayEmail.textContent = emailInput.value;
   });
+
+  extCheckbox.addEventListener('change', () => {
+    if (extCheckbox.checked) {
+      extInput.disabled = false; // Enable input
+      displayNumber.style.display = 'inline'; // Show extension text
+    } else {
+      extInput.disabled = true; // Disable input
+      displayNumber.style.display = 'none'; // Hide extension text
+    }
+  });
+
+  extInput.addEventListener('input', () => {
+    if (extInput.value.trim()) {
+      displayExt.style.display = 'inline';
+      extNumber.textContent = extInput.value;
+    } else {
+      displayExt.style.display = 'none';
+      extNumber.textContent = '';
+    }
+  });
+
+  function copyTable() {
+    // Get the table element
+    var table = document.getElementById('signatureTable');
+
+    // Create a range object to select the content
+    var range = document.createRange();
+    range.selectNodeContents(table);
+
+    // Get the selection object and add the range to it
+    var selection = window.getSelection();
+    selection.removeAllRanges(); // Clear any existing selections
+    selection.addRange(range); // Select the table content
+
+    // Copy the selected content to the clipboard
+    try {
+      var successful = document.execCommand('copy');
+      if (successful) {
+        alert('Table copied to clipboard!');
+      } else {
+        alert('Failed to copy table.');
+      }
+    } catch (err) {
+      alert('Error copying table: ' + err);
+    }
+
+    // Remove the selection after copying
+    selection.removeAllRanges();
+  }
+
 </script>
 </body>
 </html>
