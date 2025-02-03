@@ -1,0 +1,107 @@
+
+a {
+    color: inherit; /* Remove the color */
+    text-decoration: none; /* Remove the underline */
+}
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+button {
+    padding: 10px;
+    background-color: rgb(5, 5, 5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+.button-container {
+    text-align: right;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.translation-note, .Intructions {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+table {
+    width: auto;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+td {
+    padding: 10px;
+    vertical-align: top;
+    white-space: nowrap; /* Prevents unwanted line breaks */
+}
+.image-cell {
+    min-width: 150px;
+    background-color: #ffffff;
+    text-align: center;
+}
+.image-cell img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.info-cell {
+    width: 100%; /* Allow content to dictate width */
+}
+.info-cell div {
+    margin-bottom: 10px;
+}
+.name {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 48px;
+    color: black;
+}
+.job-title {
+    display: flex;
+    align-items: center;
+    color: #cf9574;
+    font-size: 19.2px;
+    font-weight: bold;
+}
+.dot {
+    font-size: 24px;
+    color: #cf9574;
+    font-weight: bold;
+}
+.email-address, .website-social {
+    display: compact;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14.4px;
+    color: black;
+}
+.social-icons {
+    display: compact;
+    gap: 10px;
+}
+.social-icons i {
+    font-size: 20px;
+    color: #666;
+}
+.social-icons i:hover {
+    color: #000;
+}
