@@ -60,7 +60,7 @@ td {
     text-align: center;
 }
 .image-cell img {
-    width: 100%;
+    width: 110%;
     height: auto;
     display: block;
 }
@@ -94,14 +94,15 @@ td {
     font-size: 14.4px;
     color: black;
 }
-.social-icons {
-    display: compact;
+.email-address img{
+    font-size: 20px;
+    width: 2.7%;
+}
+.website-social img {
+    font-size: 20px;
+    width: 2.7%;
     gap: 10px;
 }
-.social-icons i {
-    font-size: 20px;
-    color: #666;
-}
-.social-icons i:hover {
+.website-social img:hover {
     color: #000;
 }
