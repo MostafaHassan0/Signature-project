@@ -51,7 +51,7 @@ table {
 }
 td {
     padding: 10px;
-    vertical-align: top;
+    vertical-align: bottom;
     white-space: nowrap; /* Prevents unwanted line breaks */
 }
 .image-cell {
@@ -74,6 +74,7 @@ td {
     font-family: 'Brush Script MT', cursive;
     font-size: 48px;
     color: black;
+
 }
 .job-title {
     display: flex;
@@ -81,6 +82,7 @@ td {
     color: #cf9574;
     font-size: 19.2px;
     font-weight: bold;
+    line-height: 5px;
 }
 .dot {
     font-size: 24px;
@@ -93,6 +95,7 @@ td {
     align-items: center;
     font-size: 14.4px;
     color: black;
+    line-height: 5px;
 }
 .email-address img{
     font-size: 20px;

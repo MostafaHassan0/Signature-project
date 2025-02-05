@@ -16,6 +16,9 @@ const extInput = document.getElementById('ext');
 const displayExt = document.getElementById('displayExt');
 const extNumber = document.getElementById('extNumber');
 
+const fontSelected= document.getElementById('fontSelect')
+
+
 
 // Debounce function to limit API calls
 function debounce(func, timeout = 500) {
@@ -115,3 +118,15 @@ function copyTable() {
     // Remove the selection after copying
     selection.removeAllRanges();
 }
+
+
+fontSelected.addEventListener('change',() =>{
+    if (fontSelected.value === 'Arial'){
+        displayName.style.fontFamily = 'Arial';
+    }
+    if (fontSelected.value === 'Cursive'){
+        displayName.style.fontFamily = 'Brush Script MT';
+    }
+});
+
+
