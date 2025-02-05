@@ -123,9 +123,11 @@ function copyTable() {
 fontSelected.addEventListener('change',() =>{
     if (fontSelected.value === 'Arial'){
         displayName.style.fontFamily = 'Arial';
+        displayName.style.fontWeight = 'bold';
     }
     if (fontSelected.value === 'Cursive'){
         displayName.style.fontFamily = 'Brush Script MT';
+        displayName.style.fontWeight = 'normal';
     }
 });
 
