@@ -42,10 +42,6 @@ async function translateToFrench(text) {
     }
 }
 
-function hyperlinkEmail(text) {
-    displayEmail.innerHTML = `<a href="mailto:${text}">${text}</a>`;
-}
-
 const updateFrenchTranslation = debounce(async () => {
     if (jobTitleInput.value.trim()) {
         const translatedText = await translateToFrench(jobTitleInput.value);
@@ -83,13 +79,14 @@ extCheckbox.addEventListener('change', () => {
 emailInput.addEventListener('input', () => {
         displayEmail.style.display = 'inline';
         text = emailInput.value.trim();
-        hyperlinkEmail(text);
+        displayEmail.innerHTML = `<a href="mailto:${text}">${text}</a>`;
 });
 
 extInput.addEventListener('input', () => {
     if (extInput.value.trim()) {
         displayExt.style.display = 'inline';
         extNumber.textContent = extInput.value;
+
     } else {
         displayExt.style.display = 'none';
         extNumber.textContent = '';
