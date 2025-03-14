@@ -4,6 +4,7 @@ const frenchJobTitleInput = document.getElementById('frenchJobTitle');
 const fullNameInput = document.getElementById('fullname');
 const emailInput = document.getElementById('emailInput');
 
+const nameurl = document.getElementById('name_url');
 
 const displayName = document.getElementById('displayName');
 const displayJobTitle = document.getElementById('displayJobTitle');
@@ -51,17 +52,29 @@ const updateFrenchTranslation = debounce(async () => {
     }
 });
 
+nameurl.addEventListener('input', () => {
+    if (nameurl.value.trim() !== '') {
+        url = nameurl.value.trim();
+        displayName.innerHTML = `<img src="${url}" alt='${name}'>`;
+    }
+    else {
+        displayName.textContent = fullNameInput.value.trim();
+    }
+});
+
 jobTitleInput.addEventListener('input', () => {
     updateFrenchTranslation();
-    displayJobTitle.textContent = jobTitleInput.value;
+    displayJobTitle.textContent = jobTitleInput.value.trim();
 });
 
 frenchJobTitleInput.addEventListener('input', () => {
-    displayFrenchJobTitle.textContent = frenchJobTitleInput.value;
+    displayFrenchJobTitle.textContent = frenchJobTitleInput.value.trim();
 });
 
 fullNameInput.addEventListener('input', () => {
-    displayName.textContent = fullNameInput.value;
+    if (fullNameInput.value.trim() === '') {
+        displayName.textContent = fullNameInput.value.trim();
+    }
 });
 
 emailInput.addEventListener('input', () => {

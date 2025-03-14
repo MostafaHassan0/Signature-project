@@ -47,10 +47,11 @@ input {
 table {
     width: auto;
     table-layout: auto;
-    border-collapse: collapse;
+    border-collapse: collapse ;
+
 }
 td {
-    padding: 5px;
+    padding: 20px;
     vertical-align: bottom;
     white-space: nowrap; /* Prevents unwanted line breaks */
 }
@@ -58,9 +59,12 @@ td {
     min-width: 150px;
     background-color: #ffffff;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .image-cell img {
-    width: 110%;
+    width: 120%;
     height: auto;
     display: block;
 }
@@ -76,6 +80,12 @@ td {
     color: black;
 
 }
+.name img {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
 .job-title {
     display: flex;
     align-items: center;
@@ -99,12 +109,16 @@ td {
 }
 .email-address img{
     font-size: 20px;
-    width: 2.7%;
+    width: 15px;
+    position: relative;
+    transform: translateY(10%);
 }
 .website-social img {
     font-size: 20px;
-    width: 3%;
-    gap: 5px;
+    width: 20px;
+    position: relative;
+    transform: translateY(20%);
+
 }
 .website-social img:hover {
     color: #000;

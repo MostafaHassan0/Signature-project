@@ -13,6 +13,7 @@ The page will be hosted on only local network.
 Instructions:
 
 >- Please fill in the needed information.
+>- You can past your E-signature image in th url field to be used instead of the text.
 >- Verify the French translation and the Uppercasing in both languages.
 >- When the Ext box is checked and no value is inputted, only the phone number is displayed.
 >- To display the extension number, please don't forget to type it in the input field after checking the box.
