@@ -2,7 +2,7 @@
 const jobTitleInput = document.getElementById('jobtitle');
 const frenchJobTitleInput = document.getElementById('frenchJobTitle');
 const fullNameInput = document.getElementById('fullname');
-const emailInput = document.getElementById('email');
+const emailInput = document.getElementById('emailInput');
 
 
 const displayName = document.getElementById('displayName');
@@ -15,6 +15,9 @@ const displayNumber = document.getElementById('displayNumber');
 const extInput = document.getElementById('ext');
 const displayExt = document.getElementById('displayExt');
 const extNumber = document.getElementById('extNumber');
+
+const fontSelected= document.getElementById('fontSelect')
+
 
 
 // Debounce function to limit API calls
@@ -37,6 +40,10 @@ async function translateToFrench(text) {
         console.error('Translation error:', error);
         return text; // Return original text if translation fails
     }
+}
+
+function hyperlinkEmail(text) {
+    displayEmail.innerHTML = `<a href="mailto:${text}">${text}</a>`;
 }
 
 const updateFrenchTranslation = debounce(async () => {
@@ -63,10 +70,6 @@ fullNameInput.addEventListener('input', () => {
     displayName.textContent = fullNameInput.value;
 });
 
-emailInput.addEventListener('input', () => {
-    displayEmail.textContent = emailInput.value;
-});
-
 extCheckbox.addEventListener('change', () => {
     if (extCheckbox.checked) {
         extInput.disabled = false; // Enable input
@@ -75,6 +78,12 @@ extCheckbox.addEventListener('change', () => {
         extInput.disabled = true; // Disable input
         displayNumber.style.display = 'none'; // Hide extension text
     }
+});
+
+emailInput.addEventListener('input', () => {
+        displayEmail.style.display = 'inline';
+        text = emailInput.value.trim();
+        hyperlinkEmail(text);
 });
 
 extInput.addEventListener('input', () => {
@@ -115,3 +124,17 @@ function copyTable() {
     // Remove the selection after copying
     selection.removeAllRanges();
 }
+
+
+fontSelected.addEventListener('change',() =>{
+    if (fontSelected.value === 'Arial'){
+        displayName.style.fontFamily = 'Arial';
+        displayName.style.fontWeight = 'bold';
+    }
+    if (fontSelected.value === 'Cursive'){
+        displayName.style.fontFamily = 'Brush Script MT';
+        displayName.style.fontWeight = 'normal';
+    }
+});
+
+
