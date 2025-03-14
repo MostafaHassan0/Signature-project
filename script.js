@@ -2,7 +2,7 @@
 const jobTitleInput = document.getElementById('jobtitle');
 const frenchJobTitleInput = document.getElementById('frenchJobTitle');
 const fullNameInput = document.getElementById('fullname');
-const emailInput = document.getElementById('email');
+const emailInput = document.getElementById('emailInput');
 
 
 const displayName = document.getElementById('displayName');
@@ -42,6 +42,10 @@ async function translateToFrench(text) {
     }
 }
 
+function hyperlinkEmail(text) {
+    displayEmail.innerHTML = `<a href="mailto:${text}">${text}</a>`;
+}
+
 const updateFrenchTranslation = debounce(async () => {
     if (jobTitleInput.value.trim()) {
         const translatedText = await translateToFrench(jobTitleInput.value);
@@ -66,10 +70,6 @@ fullNameInput.addEventListener('input', () => {
     displayName.textContent = fullNameInput.value;
 });
 
-emailInput.addEventListener('input', () => {
-    displayEmail.textContent = emailInput.value;
-});
-
 extCheckbox.addEventListener('change', () => {
     if (extCheckbox.checked) {
         extInput.disabled = false; // Enable input
@@ -78,6 +78,12 @@ extCheckbox.addEventListener('change', () => {
         extInput.disabled = true; // Disable input
         displayNumber.style.display = 'none'; // Hide extension text
     }
+});
+
+emailInput.addEventListener('input', () => {
+        displayEmail.style.display = 'inline';
+        text = emailInput.value.trim();
+        hyperlinkEmail(text);
 });
 
 extInput.addEventListener('input', () => {
