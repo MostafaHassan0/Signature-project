@@ -50,7 +50,7 @@ table {
     border-collapse: collapse;
 }
 td {
-    padding: 10px;
+    padding: 5px;
     vertical-align: bottom;
     white-space: nowrap; /* Prevents unwanted line breaks */
 }
@@ -104,7 +104,7 @@ td {
 .website-social img {
     font-size: 20px;
     width: 3%;
-    gap: 10px;
+    gap: 5px;
 }
 .website-social img:hover {
     color: #000;
