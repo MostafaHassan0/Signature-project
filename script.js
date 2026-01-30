@@ -72,7 +72,7 @@ frenchJobTitleInput.addEventListener('input', () => {
 });
 
 fullNameInput.addEventListener('input', () => {
-    if (fullNameInput.value.trim() === '') {
+    if (fullNameInput.value.trim() !== '') {
         displayName.textContent = fullNameInput.value.trim();
     }
 });
@@ -96,12 +96,12 @@ extCheckbox.addEventListener('change', () => {
 extInput.addEventListener('input', () => {
     if (extInput.value.trim() !== '') {
         extn = extInput.value.trim();
-        displayNumber.innerHTML = `<a href="tel:+15143405000,${extn}">&nbsp;&nbsp;<img src="https://imgur.com/T7oPzFQ.png" alt="Phone Icon">
-            &nbsp;(514) 340-5000 ext.${extn}</a>`;
+        displayNumber.innerHTML = `<a href="tel:+15148482424,${extn}">&nbsp;&nbsp;<img src="https://imgur.com/T7oPzFQ.png" alt="Phone Icon">
+            &nbsp;514-848-2424 ext.${extn}</a>`;
     } else {
         extn='';
         displayNumber.innerHTML = `<a href="tel:+15143405000">&nbsp;&nbsp;<img src="https://imgur.com/T7oPzFQ.png" alt="Phone Icon">
-        &nbsp;(514) 340-5000</a>`;
+        &nbsp;514-848-2424</a>`;
     }
 });
 

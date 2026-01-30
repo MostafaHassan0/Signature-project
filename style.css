@@ -64,7 +64,7 @@ td {
     align-items: center;
 }
 .image-cell img {
-    width: 120%;
+    width: 130%;
     height: auto;
     display: block;
 }
@@ -89,14 +89,14 @@ td {
 .job-title {
     display: flex;
     align-items: center;
-    color: #cf9574;
+    color: #9c8055;
     font-size: 19.2px;
     font-weight: bold;
     line-height: 5px;
 }
 .dot {
     font-size: 24px;
-    color: #cf9574;
+    color: #9c8055;
     font-weight: bold;
 }
 .email-address, .website-social {
